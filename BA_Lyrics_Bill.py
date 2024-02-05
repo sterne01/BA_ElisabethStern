@@ -17,10 +17,10 @@ path_NaN = "/Users/estern/Documents/BA_Data/NaN_Bill/"
 all_ws = ["2001", "2002", "2003", "2004", "2005", "2006", "2007", "2008", "2009", "2010", "2011", "2012", "2013",
             "2014", "2015", "2016", "2017", "2018", "2019", "2020"]
 
-# Die Instanz "genius" definieren, in der mit dem "Access Token" Zugang zu Genius angefragt wird. Weitere Parameter:
-# "excluded_terms": nicht die Lyrics von Live-Versionen der Songs herunterladen; "remove_section_headers": Überschriften
-# wie "Chorus", "Verse 1" entfernen; "timeout" usw.: Angaben wie lange und oft nach einem Songtext gesucht werden soll
-genius = lg.Genius("ZI8bJmhp-URBvInIRXIEN1tkR0trUmb-3acnZgZcOlqUaPG3XEBVbUrg9BtfLA5F", skip_non_songs=True, excluded_terms=["(Live)", "Translation"],
+# Die Instanz "genius" definieren, in der mit dem "Access Token" (1. Parameter) Zugang zu Genius angefragt wird. Weitere Parameter:
+# "remove_section_headers": Überschriften wie "Chorus", "Verse 1" entfernen; "timeout" usw.: Angaben wie lange und 
+# oft nach einem Songtext gesucht werden soll
+genius = lg.Genius("ZI8bJmhp-URBvInIRXIEN1tkR0trUmb-3acnZgZcOlqUaPG3XEBVbUrg9BtfLA5F", skip_non_songs=True,
                    remove_section_headers=True, timeout=15, sleep_time=0.5, retries=3)
 
 # Funktion um alle Lyrics zu jedem Jahr herunterzuladen, Parameter: "path": Pfad zur Excel Datei mit den Songtiteln &
