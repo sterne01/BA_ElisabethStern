@@ -35,9 +35,10 @@ def get_lyrics(path, yearstr):
     for t, a in zip(x_file["Songtitel"],x_file["K_all"]):
         # jeweils den Song mit Genius API anfragen und falls (if) es ein Ergebnis gibt -> lyrics der Liste "lyrics"
         # hinzufügen (lyrics.append(song.lyrics)
+              # try verwenden, damit auftretende Fehler angezeigt werden und behoben werden können
         try:
             song = genius.search_song(title=t, artist=a)
-        except Timeout as e:
+        except Timeout:
             continue
         if song is not None:
             lyrics.append(song.lyrics)
